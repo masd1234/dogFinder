@@ -3,44 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Find Doggy</title>
+    <title>Doggy Finder</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="./index.js" async></script>
+    <link rel="stylesheet" href="./docs/style.css" type="text/css" />
+    <script src="./docs/index.js" async></script>
   </head>
   <body>
     <div class="input-container">
-      <label for="breed">Breed</label>
-      <input type="text" class="input" id="input-breed" name="breed" />
-      <label for="number-of-dogs">Number Of Dogs</label>
-      <input
-        type="number"
-        class="input"
-        id="input-number"
-        name="number-of-dogs"
-      />
-      <button
-        class="button-header"
-        id="find-dog"
-        type="button"
-        placeholder="Find Dog"
-        onclick="handleClick()"
-      >
-        Find Your Dog
-      </button>
-      <button
-        class="button-header"
-        id="clear-all"
-        type="button"
-        placeholder="Clear"
-        onclick="handleClickClear()"
-      >
-        Clear
-      </button>
+      <div class="input-container-individual">
+        <label for="breed">Breed</label>
+        <input type="text" class="input" id="input-breed" name="breed" />
+      </div>
+      <div class="input-container-individual">
+        <label for="number-of-dogs">Number Of Dogs</label>
+        <input
+          type="number"
+          class="input"
+          id="input-number"
+          name="number-of-dogs"
+        />
+      </div>
+      <div class="input-container-individual">
+        <button
+          class="button-header"
+          id="find-dog"
+          type="button"
+          placeholder="Find Dog"
+          onclick="handleClick()"
+        >
+          Find Your Dog
+        </button>
+        <button
+          class="button-header"
+          id="clear-all"
+          type="button"
+          placeholder="Clear"
+          onclick="handleClickClear()"
+        >
+          Clear
+        </button>
+      </div>
     </div>
 
     <div class="breed-container"></div>
