@@ -1,11 +1,12 @@
-async function myFetch(ur) {
+async function myFetch(ur, breed) {
   let response = await fetch(ur);
+  console.log(response);
 
   if (!response.ok) {
     throw alert(`This Dog does not exist :( ${response.status}`);
   } else {
     let myBlob = await response.json();
-    console.log(myBlob)
+    console.log(myBlob);
     let containerDog = document.createElement("div");
     let image = document.createElement("img");
 
@@ -14,7 +15,8 @@ async function myFetch(ur) {
     document.querySelector(".breed-container").appendChild(containerDog);
     containerDog.appendChild(image);
 
-    containerDog.innerHTML = `<img class="image "src=${myBlob.message}>
+    containerDog.innerHTML = `<h1>Breed: ${breed}</h1>
+    <img class="image "src=${myBlob.message}>
     <button class="button-delete"id=${Math.floor(
       Math.random() * 5000
     )} onClick="deleteOneDogsss()" >X</button>`;
@@ -29,7 +31,7 @@ const handleClick = () => {
   if (!inpuBreed.value) {
     alert("please type your breed on the input field");
   } else {
-    myFetch(url);
+    myFetch(url, inpuBreed.value);
     inpuBreed.value = "";
   }
 };
