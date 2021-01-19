@@ -47,3 +47,12 @@ const deleteOneDogsss = (e) => {
 };
 
 document.body.addEventListener("click", deleteOneDogsss);
+document.addEventListener("keydown", (e) => {
+  let inpuBreed = document.querySelector("#input-breed");
+  let inputNumberDogs = document.querySelector("#input-number");
+  let url = `https://dog.ceo/api/breed/${inpuBreed.value}/images/random`;
+  if (e.code === "Enter") {
+    myFetch(url, inpuBreed.value);
+    inpuBreed.value = "";
+  }
+});
