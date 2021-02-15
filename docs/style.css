@@ -40,7 +40,7 @@ body {
   text-align: center;
   display: flex;
   justify-content: space-evenly;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 .button-header {
@@ -48,19 +48,21 @@ body {
   border-radius: 0.5rem;
   padding: 0.3rem;
   font-family: "Hachi Maru Pop", cursive;
-  color: whitesmoke;
-  background-color: transparent;
+  color: rgba(250, 75, 52, 0.815);
+  background-color: whitesmoke;
   transition: 1s;
   height: auto;
-  font-size: 1rem;
+  font-size: 1.2rem;
   flex-shrink: 1;
 }
 
 #find-dog:hover {
   background-color: rgb(7, 206, 7);
+  color: whitesmoke;
 }
 
 #clear-all:hover {
+  color: whitesmoke;
   background-color: rgba(255, 22, 22, 0.863);
 }
 

@@ -1,25 +1,32 @@
 async function myFetch(ur, breed) {
   let response = await fetch(ur);
-  console.log(response);
 
   if (!response.ok) {
     throw alert(`This Dog does not exist :( ${response.status}`);
   } else {
     let myBlob = await response.json();
-    console.log(myBlob);
-    let containerDog = document.createElement("div");
-    let image = document.createElement("img");
+    let msg = myBlob.message.slice(30);
+    for (let i = 0; i < msg.length; i++) {
+      if (msg[i].includes("/")) {
+        console.log(msg);
+        msg[i].trimRight("/");
+      }
+    }
 
-    containerDog.classList.add("container-dog");
+    const breedContainerSelector = document.querySelector(".breed-container");
 
-    document.querySelector(".breed-container").appendChild(containerDog);
-    containerDog.appendChild(image);
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("indvidual-dog");
 
-    containerDog.innerHTML = `<h1>Breed: ${breed}</h1>
+    newDiv.innerHTML = `<div class="container-dog"><h1>Breed: ${
+      breed || myBlob.message.slice(30, 46)
+    }</h1>
     <img class="image "src=${myBlob.message}>
     <button class="button-delete"id=${Math.floor(
       Math.random() * 5000
-    )} onClick="deleteOneDogsss()" >X</button>`;
+    )} onClick="deleteOneDogsss()" >X</button></div>`;
+
+    breedContainerSelector.appendChild(newDiv);
   }
 }
 
@@ -34,6 +41,12 @@ const handleClick = () => {
     myFetch(url, inpuBreed.value);
     inpuBreed.value = "";
   }
+};
+
+const handleClickRandom = () => {
+  let url = `https://dog.ceo/api/breeds/image/random`;
+
+  myFetch(url);
 };
 
 const handleClickClear = () => {
