@@ -1,0 +1,8 @@
+1) type the following breeds on the input field and see the dog that appears:
+
+akita
+african
+beagle
+rottweiler
+redbone
+pitbull
