@@ -25,7 +25,6 @@ async function myFetch(url, breed) {
 
 const handleClick = () => {
   let inpuBreed = document.querySelector("#input-breed");
-  let inputNumberDogs = document.querySelector("#input-number");
   let url = `https://dog.ceo/api/breed/${inpuBreed.value}/images/random`;
 
   if (!inpuBreed.value) {

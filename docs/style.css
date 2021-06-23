@@ -67,12 +67,12 @@ body {
 }
 
 .breed-container {
-  margin-top: 5rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
-  height: 80%;
+  height: auto;
+  padding: 3rem 0 3rem 0;
 }
 
 .container-dog {
