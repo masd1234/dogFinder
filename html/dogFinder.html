@@ -9,14 +9,31 @@
       href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./docs/style.css" type="text/css" />
-    <script src="./docs/index.js" async></script>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <script src="../dist/index.js" async></script>
   </head>
   <body>
+    <header class="header">
+      <h1 class="logo">Dog Finder App</h1>
+      <nav class="navbar">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+        </ul>
+        <ul>
+          <li><a href="./dogFinder.html">Find Your Dog</a></li>
+        </ul>
+      </nav>
+    </header>
     <div class="input-container">
       <div class="input-container-individual">
         <label for="breed">Breed</label>
-        <input type="text" class="input" id="input-breed" name="breed" />
+        <input
+          type="text"
+          class="input"
+          id="input-breed"
+          name="breed"
+          required
+        />
       </div>
       <div class="input-container-individual"></div>
       <div class="input-container-individual">

@@ -13,6 +13,79 @@ body {
   height: 100vh;
 }
 
+.header {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(240, 30, 2, 0.815);
+}
+
+.logo {
+  flex-grow: 1;
+  margin-left: 5rem;
+  color: whitesmoke;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.navbar ul li {
+  list-style: none;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  transition: 1s;
+  border-radius: 0.5rem;
+  padding: 0.4rem;
+}
+
+.navbar ul li a:hover {
+  background-color: whitesmoke;
+  color: rgba(240, 30, 2, 0.815);
+}
+
+.main {
+  height: 90%;
+  background-color: rgba(240, 30, 2, 0.815);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.link {
+  color: whitesmoke;
+  font-size: 4rem;
+  text-decoration: none;
+  transition: 1s;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.main p {
+  color: whitesmoke;
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeIn;
+  animation-duration: 6s;
+  animation-fill-mode: forwards;
+}
+
+.link:hover {
+  color: rgba(240, 30, 2, 0.815);
+  background-color: whitesmoke;
+  transform: translateY(-10px);
+}
+
 .input-container {
   display: flex;
   align-items: center;
@@ -116,4 +189,33 @@ body {
   background-color: transparent;
   color: whitesmoke;
   background-color: red;
+}
+
+@media only screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  .navbar ul li a {
+    font-size: 1rem;
+  }
+
+  .link {
+    font-size: 3rem;
+  }
+
+  .main p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
