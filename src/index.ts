@@ -55,16 +55,14 @@ async function myFetch(url: string, breed?: string) {
   };
 
   const displayList = () => {
-
     (<HTMLElement>document.querySelector(".listBreed")).classList.toggle("displayedList");;
   };
 
 
-  (<HTMLElement>document.querySelector("#list")).addEventListener("click",displayList);
-  (<HTMLElement>document.querySelector(".closeList")).addEventListener("click",displayList);  
 
   document.body.addEventListener("click", deleteOneDogsss);
-  document.addEventListener("keydown", (e) => {
+
+  document.body.addEventListener("keydown", (e) => {
     let inpuBreed = document.querySelector("#input-breed") as HTMLInputElement;
     let url = `https://dog.ceo/api/breed/${inpuBreed.value.toLocaleLowerCase()}/images/random`;
     if (e.code === "Enter") {
@@ -72,5 +70,9 @@ async function myFetch(url: string, breed?: string) {
       inpuBreed.value = "";
     }
   });
+
+  (<HTMLElement>document.querySelector("#list")).addEventListener("click",displayList);
+  (<HTMLElement>document.querySelector(".closeList")).addEventListener("click",displayList);  
+
   
 

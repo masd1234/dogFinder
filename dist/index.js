@@ -89,10 +89,8 @@ var displayList = function () {
     document.querySelector(".listBreed").classList.toggle("displayedList");
     ;
 };
-document.querySelector("#list").addEventListener("click", displayList);
-document.querySelector(".closeList").addEventListener("click", displayList);
 document.body.addEventListener("click", deleteOneDogsss);
-document.addEventListener("keydown", function (e) {
+document.body.addEventListener("keydown", function (e) {
     var inpuBreed = document.querySelector("#input-breed");
     var url = "https://dog.ceo/api/breed/" + inpuBreed.value.toLocaleLowerCase() + "/images/random";
     if (e.code === "Enter") {
@@ -100,3 +98,5 @@ document.addEventListener("keydown", function (e) {
         inpuBreed.value = "";
     }
 });
+document.querySelector("#list").addEventListener("click", displayList);
+document.querySelector(".closeList").addEventListener("click", displayList);
