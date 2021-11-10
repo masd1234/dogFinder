@@ -24,6 +24,7 @@ body {
 .logo {
   flex-grow: 1;
   margin-left: 5rem;
+  font-size: 1.2rem;
   color: whitesmoke;
 }
 
@@ -41,7 +42,7 @@ body {
 
 .navbar ul li a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: whitesmoke;
   transition: 1s;
   border-radius: 0.5rem;
@@ -191,9 +192,81 @@ body {
   background-color: red;
 }
 
+.instructionsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  width: 100%;
+  background-color: rgba(245, 40, 13, 0.815);
+  color: whitesmoke;
+}
+
+.instructionsContainer ol {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  width: 80%;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#list {
+  color: rgb(0, 102, 255);
+  transition: 1s;
+  font-size: 1.3rem;
+}
+
+#list:hover {
+  color: rgb(43, 255, 0);
+}
+
+.listBreed {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: whitesmoke;
+  color: rgba(245, 40, 13, 0.815);
+  width: 90%;
+  height: 70%;
+  border-radius: 1rem;
+}
+
+.listBreed ol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.displayedList {
+  display: flex;
+}
+
+.closeList {
+  margin-top: 1rem;
+  border: none;
+  background: rgba(245, 40, 13, 0.815);
+  color: whitesmoke;
+  padding: 0.2rem 1rem;
+  border-radius: 0.5rem;
+  transition: 1s;
+}
+
+.closeList:hover {
+  background: whitesmoke;
+  color: rgba(245, 40, 13, 0.815);
+}
+
 @media only screen and (max-width: 480px) {
+  .navbar {
+    gap: 1rem;
+  }
   .logo {
-    font-size: 1.5rem;
     margin-left: 0.5rem;
   }
   .navbar ul li a {
@@ -207,6 +280,15 @@ body {
   .main p {
     font-size: 1.2rem;
     text-align: center;
+  }
+
+  .instructionsContainer ol {
+    width: 70%;
+    font-size: 1.2rem;
+  }
+
+  #list {
+    font-size: 1rem;
   }
 }
 

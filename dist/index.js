@@ -63,7 +63,7 @@ function myFetch(url, breed) {
 }
 var handleClick = function () {
     var inpuBreed = document.querySelector("#input-breed");
-    var url = "https://dog.ceo/api/breed/" + inpuBreed.value + "/images/random";
+    var url = "https://dog.ceo/api/breed/" + inpuBreed.value.toLocaleLowerCase() + "/images/random";
     if (!inpuBreed.value) {
         alert("please type your breed on the input field");
     }
@@ -85,10 +85,16 @@ var deleteOneDogsss = function (e) {
         targetE.parentNode.remove();
     }
 };
+var displayList = function () {
+    document.querySelector(".listBreed").classList.toggle("displayedList");
+    ;
+};
+document.querySelector("#list").addEventListener("click", displayList);
+document.querySelector(".closeList").addEventListener("click", displayList);
 document.body.addEventListener("click", deleteOneDogsss);
 document.addEventListener("keydown", function (e) {
     var inpuBreed = document.querySelector("#input-breed");
-    var url = "https://dog.ceo/api/breed/" + inpuBreed.value + "/images/random";
+    var url = "https://dog.ceo/api/breed/" + inpuBreed.value.toLocaleLowerCase() + "/images/random";
     if (e.code === "Enter") {
         myFetch(url, inpuBreed.value);
         inpuBreed.value = "";

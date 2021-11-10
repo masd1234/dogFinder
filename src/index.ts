@@ -29,8 +29,7 @@ async function myFetch(url: string, breed?: string) {
   
   const handleClick = () => {
     let inpuBreed = document.querySelector("#input-breed") as HTMLInputElement;
-    let url = `https://dog.ceo/api/breed/${inpuBreed.value}/images/random`;
-  
+    let url = `https://dog.ceo/api/breed/${inpuBreed.value.toLocaleLowerCase()}/images/random`;  
     if (!inpuBreed.value) {
       alert("please type your breed on the input field");
     } else {
@@ -41,12 +40,10 @@ async function myFetch(url: string, breed?: string) {
   
   const handleClickRandom = () => {
     let url = `https://dog.ceo/api/breeds/image/random`;
-  
     myFetch(url);
   };
   
   const handleClickClear = () => {
-
     (<HTMLElement>document.querySelector(".breed-container")).innerHTML = "";
   };
   
@@ -57,13 +54,23 @@ async function myFetch(url: string, breed?: string) {
     }
   };
 
+  const displayList = () => {
+
+    (<HTMLElement>document.querySelector(".listBreed")).classList.toggle("displayedList");;
+  };
+
+
+  (<HTMLElement>document.querySelector("#list")).addEventListener("click",displayList);
+  (<HTMLElement>document.querySelector(".closeList")).addEventListener("click",displayList);  
+
   document.body.addEventListener("click", deleteOneDogsss);
   document.addEventListener("keydown", (e) => {
     let inpuBreed = document.querySelector("#input-breed") as HTMLInputElement;
-    let url = `https://dog.ceo/api/breed/${inpuBreed.value}/images/random`;
+    let url = `https://dog.ceo/api/breed/${inpuBreed.value.toLocaleLowerCase()}/images/random`;
     if (e.code === "Enter") {
       myFetch(url, inpuBreed.value);
       inpuBreed.value = "";
     }
   });
   
+
