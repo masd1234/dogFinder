@@ -1,0 +1,50 @@
+.header {
+  height: 10%;
+  @include flex-display-center-all;
+  background-color: $primary-color;
+
+  .logo {
+    flex-grow: 1;
+    margin-left: 5rem;
+    font-size: 1.2rem;
+    color: $secondary-color;
+  }
+
+  .navbar {
+    @include flex-display-center-all;
+    gap: 3rem;
+    flex-grow: 1;
+    & ul li {
+      list-style: none;
+    }
+
+    & a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: $secondary-color;
+      transition: 1s;
+      border-radius: 0.5rem;
+      padding: 0.4rem;
+      &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    .navbar {
+      gap: 1rem;
+    }
+
+    .navbar ul li a {
+      font-size: 1rem;
+    }
+
+    .logo {
+      margin-left: 0.5rem;
+    }
+  }
+}

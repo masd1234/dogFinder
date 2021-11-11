@@ -1,5 +1,3 @@
-
- 
 async function myFetch(url: string, breed?: string) {
     let response = await fetch(url);
   

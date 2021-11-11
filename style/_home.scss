@@ -1,0 +1,53 @@
+.main {
+  height: 90%;
+  background-color: $primary-color;
+  @include flex-display-center-all;
+  flex-direction: column;
+
+  .link {
+    color: $secondary-color;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: 1s;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    &:hover {
+      color: $primary-color;
+      background-color: $secondary-color;
+      transform: translateY(-10px);
+    }
+  }
+
+  & p {
+    color: $secondary-color;
+    font-size: 2rem;
+    opacity: 0;
+    animation: fadeIn;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main {
+    & p {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .link {
+      font-size: 3rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,4 +1,6 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -21,26 +23,26 @@ body {
   background-color: rgba(240, 30, 2, 0.815);
 }
 
-.logo {
+.header .logo {
   flex-grow: 1;
   margin-left: 5rem;
   font-size: 1.2rem;
   color: whitesmoke;
 }
 
-.navbar {
+.header .navbar {
   display: flex;
   justify-content: center;
-  gap: 3rem;
   align-items: center;
+  gap: 3rem;
   flex-grow: 1;
 }
 
-.navbar ul li {
+.header .navbar ul li {
   list-style: none;
 }
 
-.navbar ul li a {
+.header .navbar a {
   text-decoration: none;
   font-size: 1.2rem;
   color: whitesmoke;
@@ -49,9 +51,21 @@ body {
   padding: 0.4rem;
 }
 
-.navbar ul li a:hover {
+.header .navbar a:hover {
   background-color: whitesmoke;
   color: rgba(240, 30, 2, 0.815);
+}
+
+@media only screen and (max-width: 480px) {
+  .header .navbar {
+    gap: 1rem;
+  }
+  .header .navbar ul li a {
+    font-size: 1rem;
+  }
+  .header .logo {
+    margin-left: 0.5rem;
+  }
 }
 
 .main {
@@ -63,13 +77,19 @@ body {
   flex-direction: column;
 }
 
-.link {
+.main .link {
   color: whitesmoke;
   font-size: 4rem;
   text-decoration: none;
   transition: 1s;
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+.main .link:hover {
+  color: rgba(240, 30, 2, 0.815);
+  background-color: whitesmoke;
+  transform: translateY(-10px);
 }
 
 .main p {
@@ -81,115 +101,23 @@ body {
   animation-fill-mode: forwards;
 }
 
-.link:hover {
-  color: rgba(240, 30, 2, 0.815);
-  background-color: whitesmoke;
-  transform: translateY(-10px);
+@media only screen and (max-width: 480px) {
+  .main p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .main .link {
+    font-size: 3rem;
+  }
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  height: auto;
-  padding: 2rem 0;
-  gap: 2rem;
-  padding-left: 1rem;
-  background-color: rgba(240, 30, 2, 0.815);
-  color: whitesmoke;
-  font-weight: bold;
-  font-size: 2rem;
-}
-
-.input {
-  border: none;
-  border-bottom: 1px solid whitesmoke;
-  background-color: transparent;
-  color: whitesmoke;
-  text-align: center;
-  flex-shrink: 1;
-}
-
-.input-container-individual {
-  flex-grow: 1;
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.button-header {
-  border: 1px solid whitesmoke;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  font-family: "Hachi Maru Pop", cursive;
-  color: rgba(250, 75, 52, 0.815);
-  background-color: whitesmoke;
-  transition: 1s;
-  height: auto;
-  font-size: 1.2rem;
-  flex-shrink: 1;
-}
-
-#find-dog:hover {
-  background-color: rgb(7, 206, 7);
-  color: whitesmoke;
-}
-
-#clear-all:hover {
-  color: whitesmoke;
-  background-color: rgba(255, 22, 22, 0.863);
-}
-
-.breed-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  height: auto;
-  padding: 3rem 0 3rem 0;
-}
-
-.container-dog {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 1.2rem;
-  gap: 1rem;
-  height: 30rem;
-  box-shadow: 1px 5px 5px 0.5px rgba(0, 0, 0, 0.363);
-  border-radius: 0.5rem;
-  color: whitesmoke;
-  background-color: rgba(245, 40, 13, 0.815);
-  transition: 1s;
-}
-
-.container-dog:hover {
-  box-shadow: 1px 10px 5px 0.5px rgba(0, 0, 0, 0.363);
-  transform: translateY(-10px);
-}
-
-.image {
-  height: 20rem;
-  flex-shrink: 1;
-  flex-grow: 1;
-  max-width: 100%;
-}
-
-.button-delete {
-  background-color: whitesmoke;
-  color: red;
-  border: none;
-  padding: 0.3rem;
-  width: 3rem;
-  border-radius: 0.3rem;
-  transition: 1s;
-}
-
-.button-delete:hover {
-  background-color: transparent;
-  color: whitesmoke;
-  background-color: red;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .instructionsContainer {
@@ -198,7 +126,7 @@ body {
   align-items: center;
   height: 90%;
   width: 100%;
-  background-color: rgba(245, 40, 13, 0.815);
+  background-color: rgba(240, 30, 2, 0.815);
   color: whitesmoke;
 }
 
@@ -214,13 +142,19 @@ body {
 }
 
 #list {
-  color: rgb(0, 102, 255);
+  color: rgba(240, 30, 2, 0.815);
   transition: 1s;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  width: 50%;
+  margin-top: 0.9rem;
+  padding: 0.5rem;
+  background-color: whitesmoke;
+  border-radius: 0.5rem;
 }
 
 #list:hover {
-  color: rgb(43, 255, 0);
+  color: whitesmoke;
+  background-color: rgba(240, 30, 2, 0.815);
 }
 
 .listBreed {
@@ -230,7 +164,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: whitesmoke;
-  color: rgba(245, 40, 13, 0.815);
+  color: rgba(240, 30, 2, 0.815);
   width: 90%;
   height: 70%;
   border-radius: 1rem;
@@ -250,7 +184,7 @@ body {
 .closeList {
   margin-top: 1rem;
   border: none;
-  background: rgba(245, 40, 13, 0.815);
+  background: rgba(240, 30, 2, 0.815);
   color: whitesmoke;
   padding: 0.2rem 1rem;
   border-radius: 0.5rem;
@@ -259,45 +193,121 @@ body {
 
 .closeList:hover {
   background: whitesmoke;
-  color: rgba(245, 40, 13, 0.815);
+  color: rgba(240, 30, 2, 0.815);
 }
 
 @media only screen and (max-width: 480px) {
-  .navbar {
-    gap: 1rem;
-  }
-  .logo {
-    margin-left: 0.5rem;
-  }
-  .navbar ul li a {
-    font-size: 1rem;
-  }
-
-  .link {
-    font-size: 3rem;
-  }
-
-  .main p {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
   .instructionsContainer ol {
     width: 70%;
     font-size: 1.2rem;
   }
-
   #list {
     font-size: 1rem;
   }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.input-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: auto;
+  padding: 2rem 0;
+  gap: 2rem;
+  padding-left: 1rem;
+  background-color: rgba(240, 30, 2, 0.815);
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 2rem;
 }
+
+.input-container .input-container-individual {
+  flex-grow: 1;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.input-container .input-container-individual .input {
+  border: none;
+  border-bottom: 1px solid whitesmoke;
+  background-color: transparent;
+  color: whitesmoke;
+  text-align: center;
+  flex-shrink: 1;
+}
+
+.input-container .input-container-individual .button-header {
+  border: 1px solid whitesmoke;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-family: "Hachi Maru Pop", cursive;
+  color: rgba(250, 75, 52, 0.815);
+  background-color: whitesmoke;
+  transition: 1s;
+  height: auto;
+  font-size: 1.2rem;
+  flex-shrink: 1;
+}
+
+#find-dog:hover {
+  background-color: #07ce07;
+  color: whitesmoke;
+}
+
+#clear-all:hover {
+  color: whitesmoke;
+  background-color: rgba(255, 22, 22, 0.863);
+}
+
+.breed-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  height: auto;
+  padding: 3rem 0 3rem 0;
+}
+
+.breed-container .container-dog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1.2rem;
+  gap: 1rem;
+  height: 30rem;
+  box-shadow: 1px 5px 5px 0.5px rgba(0, 0, 0, 0.363);
+  border-radius: 0.5rem;
+  color: whitesmoke;
+  background-color: rgba(245, 40, 13, 0.815);
+  transition: 1s;
+}
+
+.breed-container .container-dog:hover {
+  box-shadow: 1px 10px 5px 0.5px rgba(0, 0, 0, 0.363);
+  transform: translateY(-10px);
+}
+
+.breed-container .container-dog .image {
+  height: 20rem;
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.breed-container .container-dog .button-delete {
+  background-color: whitesmoke;
+  color: red;
+  border: none;
+  padding: 0.3rem;
+  width: 3rem;
+  border-radius: 0.3rem;
+  transition: 1s;
+}
+
+.breed-container .container-dog .button-delete:hover {
+  background-color: transparent;
+  color: whitesmoke;
+  background-color: red;
+}
+/*# sourceMappingURL=style.css.map */
