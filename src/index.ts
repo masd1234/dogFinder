@@ -40,6 +40,12 @@ async function myFetch(url: string, breed?: string) {
     let url = `https://dog.ceo/api/breeds/image/random`;
     myFetch(url);
   };
+
+  const clickMobileMenu = () => {
+    (<HTMLElement>document.querySelector(".navbar-hamburguer ")).classList.toggle("clicked");
+    (<HTMLElement>document.querySelector(".mobile-menu-displayed ")).classList.toggle("non-displayed");
+  };
+ 
   
   const handleClickClear = () => {
     (<HTMLElement>document.querySelector(".breed-container")).innerHTML = "";
@@ -53,13 +59,12 @@ async function myFetch(url: string, breed?: string) {
   };
 
   const displayList = () => {
-    (<HTMLElement>document.querySelector(".listBreed")).classList.toggle("displayedList");;
+    (<HTMLElement>document.querySelector(".listBreed")).classList.toggle("displayedList");
   };
 
 
 
   document.body.addEventListener("click", deleteOneDogsss);
-
   document.body.addEventListener("keydown", (e) => {
     let inpuBreed = document.querySelector("#input-breed") as HTMLInputElement;
     let url = `https://dog.ceo/api/breed/${inpuBreed.value.toLocaleLowerCase()}/images/random`;
@@ -69,8 +74,9 @@ async function myFetch(url: string, breed?: string) {
     }
   });
 
+  (<HTMLElement>document.querySelector(".mobile-menu")).addEventListener("click",clickMobileMenu);
   (<HTMLElement>document.querySelector("#list")).addEventListener("click",displayList);
-  (<HTMLElement>document.querySelector(".closeList")).addEventListener("click",displayList);  
-
+  (<HTMLElement>document.querySelector(".closeList")).addEventListener("click",displayList); 
+  
   
 

@@ -6,7 +6,7 @@
 
   .link {
     color: $secondary-color;
-    font-size: 4rem;
+    font-size: 3rem;
     text-decoration: none;
     transition: 1s;
     border-radius: 0.5rem;
@@ -21,7 +21,7 @@
 
   & p {
     color: $secondary-color;
-    font-size: 2rem;
+    font-size: 1.5rem;
     opacity: 0;
     animation: fadeIn;
     animation-duration: 6s;

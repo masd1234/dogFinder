@@ -76,6 +76,10 @@ var handleClickRandom = function () {
     var url = "https://dog.ceo/api/breeds/image/random";
     myFetch(url);
 };
+var clickMobileMenu = function () {
+    document.querySelector(".navbar-hamburguer ").classList.toggle("clicked");
+    document.querySelector(".mobile-menu-displayed ").classList.toggle("non-displayed");
+};
 var handleClickClear = function () {
     document.querySelector(".breed-container").innerHTML = "";
 };
@@ -87,7 +91,6 @@ var deleteOneDogsss = function (e) {
 };
 var displayList = function () {
     document.querySelector(".listBreed").classList.toggle("displayedList");
-    ;
 };
 document.body.addEventListener("click", deleteOneDogsss);
 document.body.addEventListener("keydown", function (e) {
@@ -98,5 +101,6 @@ document.body.addEventListener("keydown", function (e) {
         inpuBreed.value = "";
     }
 });
+document.querySelector(".mobile-menu").addEventListener("click", clickMobileMenu);
 document.querySelector("#list").addEventListener("click", displayList);
 document.querySelector(".closeList").addEventListener("click", displayList);
