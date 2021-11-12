@@ -11,6 +11,9 @@
     transition: 1s;
     border-radius: 0.5rem;
     padding: 1rem;
+    animation: clipthFromDownToUp;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 
     &:hover {
       color: $primary-color;
@@ -24,7 +27,8 @@
     font-size: 1.5rem;
     opacity: 0;
     animation: fadeIn;
-    animation-duration: 6s;
+    animation-duration: 3s;
+    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 }
@@ -39,6 +43,16 @@
     .link {
       font-size: 3rem;
     }
+  }
+}
+
+@keyframes clipthFromDownToUp {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
 }
 
